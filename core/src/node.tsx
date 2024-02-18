@@ -174,7 +174,9 @@ export const RootNode = forwardRef(
           {isSet && <Type type="Set" />}
           {isMap && <Type type="Map" />}
           <Meta start isArray={isArray} level={level} render={components.braces} />
-          {!expand && <Ellipsis render={components.ellipsis} count={nameKeys.length} level={level} />}
+          {!expand && (
+            <Ellipsis render={components.ellipsis} count={nameKeys.length} level={level} valueData={valueData} />
+          )}
           {!expand && <Meta isArray={isArray} level={level} render={components.braces} />}
           {countInfo}
           {countInfoExtra}

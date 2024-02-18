@@ -1,0 +1,12 @@
+.w-rjv-ellipsis-array-wrapper {
+  padding: 0 0px;
+}
+
+.w-rjv-ellipsis-value .w-rjv-line {
+  display: inline;
+  padding-left: 0 !important;
+}
+
+.w-rjv-ellipsis-value .w-rjv-colon {
+  display: none;
+}

@@ -82,6 +82,13 @@ export function ReValue<T extends object>(props: ReValueProps<T>) {
       $edit.current.setAttribute('contentEditable', 'false');
       let text: unknown = $edit.current.innerHTML as string;
       let typeStr = curentType;
+      if (/^["'].*["']$/.test(text as string)) {
+        text = (text as string).replace(/^["'](.*)["']$/, '$1');
+        typeStr = 'string';
+      } else if (typeof text === 'number' && !isNaN(text)) {
+        text = Number(text);
+        typeStr = isFloat(text as number) ? 'float' : 'number';
+      }
       if (curentType === 'number' || curentType === 'float') {
         text = Number(text);
         typeStr = isFloat(text as number) ? 'float' : 'number';
