@@ -93,6 +93,7 @@ export interface ValueViewProps<T extends object>
   renderKey?: JSX.Element;
   countInfo?: JSX.Element;
   setValue?: React.Dispatch<React.SetStateAction<T>>;
+  enableEdit?: boolean;
 }
 
 export function getValueString<T>(value: T) {
@@ -201,6 +202,7 @@ export function ValueView<T extends object>(props: ValueViewProps<T>) {
     components = {},
     quotes,
     level,
+    enableEdit,
     enableClipboard,
     displayObjectSize,
     displayDataTypes,
@@ -233,7 +235,7 @@ export function ValueView<T extends object>(props: ValueViewProps<T>) {
     className: 'w-rjv-line',
     style: { paddingLeft: indentWidth },
   };
-  if (enableClipboard) {
+  if (enableClipboard || enableEdit) {
     eventProps.onMouseEnter = () => setShowTools(true);
     eventProps.onMouseLeave = () => setShowTools(false);
   }

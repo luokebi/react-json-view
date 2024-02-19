@@ -69,6 +69,7 @@ export interface JsonViewProps<T extends object>
     countInfo?: (props: CountInfoProps) => JSX.Element;
     countInfoExtra?: (props: Omit<CountInfoExtraProps<T>, 'editable'>) => JSX.Element;
   };
+  enableEdit?: boolean;
 }
 
 const JsonView = forwardRef<HTMLDivElement, JsonViewProps<object>>((props, ref) => {

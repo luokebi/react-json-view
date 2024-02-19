@@ -1,12 +1,34 @@
 .w-rjv-ellipsis-array-wrapper {
-  padding: 0 0px;
+  padding: 0 2px;
+}
+.w-rjv-ellipsis-wrapper {
+  display: inline-block;
+  /* max-width: 300px; */
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .w-rjv-ellipsis-value .w-rjv-line {
-  display: inline;
   padding-left: 0 !important;
+  display: inline;
 }
 
 .w-rjv-ellipsis-value .w-rjv-colon {
   display: none;
+}
+
+.w-json-view-container {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w-json-view-container > div {
+  overflow: hidden;
+  width: 100%;
+}
+
+.w-json-view-container > div > svg {
+  flex-shrink: 0;
 }

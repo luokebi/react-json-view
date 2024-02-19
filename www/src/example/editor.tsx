@@ -33,13 +33,17 @@ export function ExampleEditor() {
   // }, []);
 
   return (
-    <Fragment>
+    <div style={{ width: '500px' }}>
       <JsonViewEditor
         value={src}
         onEdit={(opts) => {
           console.log('onEdit:', opts);
           return true;
         }}
+        quotes={''}
+        displayDataTypes={false}
+        displayObjectSize={false}
+        enableClipboard={false}
         onDelete={(keyName, value, parentValue, opts) => {
           console.group('On Delete');
           console.log('keyName:', keyName);
@@ -80,6 +84,6 @@ export function ExampleEditor() {
           </select>
         </Label>
       </Options>
-    </Fragment>
+    </div>
   );
 }

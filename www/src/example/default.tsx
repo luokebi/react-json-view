@@ -116,7 +116,7 @@ export function Example() {
   }, []);
 
   return (
-    <Fragment>
+    <div style={{ width: '500px' }}>
       <JsonView
         value={src}
         indentWidth={indentWidth}
@@ -208,6 +208,6 @@ export function Example() {
           <input type="checkbox" checked={objectSortKeys} onChange={(evn) => setObjectSortKeys(evn.target.checked)} />
         </Label>
       </Options>
-    </Fragment>
+    </div>
   );
 }

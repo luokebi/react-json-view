@@ -49,6 +49,7 @@ export const RootNode = forwardRef(
       components = {},
       displayObjectSize = true,
       enableClipboard = true,
+      enableEdit,
       highlightUpdates = true,
       objectSortKeys = false,
       indentWidth = 15,
@@ -113,7 +114,7 @@ export const RootNode = forwardRef(
     );
     const [showTools, setShowTools] = useState(false);
     const eventProps: React.HTMLAttributes<HTMLDivElement> = {};
-    if (enableClipboard) {
+    if (enableClipboard || enableEdit) {
       eventProps.onMouseEnter = () => setShowTools(true);
       eventProps.onMouseLeave = () => setShowTools(false);
     }
@@ -266,6 +267,7 @@ export const RootNode = forwardRef(
                     keyName={key}
                     isSet={isSet}
                     value={myValue}
+                    enableEdit={enableEdit}
                   />
                 );
               })}

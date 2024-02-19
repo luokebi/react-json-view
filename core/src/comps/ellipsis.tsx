@@ -54,7 +54,7 @@ function getEllipsisStr(obj: any) {
   if (typeof obj === 'object' && !Array.isArray(obj)) {
     console.log('strArr', Object.entries(obj));
     result = (
-      <span style={{ margin: '0 2px' }}>
+      <span style={{ margin: '0 2px' }} className="w-rjv-ellipsis-wrapper">
         {Object.entries(obj).map(([key, value], index) => {
           return (
             <span>
@@ -73,7 +73,7 @@ function getEllipsisStr(obj: any) {
       <span>
         {obj.map((item, index) => {
           return (
-            <span className="w-rjv-ellipsis-array-wrapper">
+            <span className="w-rjv-ellipsis-wrapper w-rjv-ellipsis-array-wrapper">
               <span className="w-rjv-ellipsis-value">{getSubValue(item)}</span>
               {index !== obj.length - 1 ? ', ' : ''}
             </span>

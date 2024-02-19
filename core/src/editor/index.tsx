@@ -53,7 +53,15 @@ const JsonViewEditor = forwardRef<HTMLDivElement, JsonViewEditorProps<object>>((
       );
     },
   };
-  return <JsonView {...reset} displayDataTypes={false} components={comps} ref={ref} />;
+  return (
+    <JsonView
+      {...reset}
+      enableEdit={typeof onEdit !== 'undefined'}
+      displayDataTypes={false}
+      components={comps}
+      ref={ref}
+    />
+  );
 });
 
 JsonViewEditor.displayName = 'JVR.JsonViewEditor';
