@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-json-view",
-  "version": "1.12.2",
+  "version": "1.0.0",
   "description": "JSON viewer for react.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -120,7 +120,7 @@
     "treeview"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.22.6"
+    "@babel/runtime": ">=7.10.0"
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",

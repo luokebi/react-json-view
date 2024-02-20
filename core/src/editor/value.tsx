@@ -82,10 +82,11 @@ export function ReValue<T extends object>(props: ReValueProps<T>) {
       $edit.current.setAttribute('contentEditable', 'false');
       let text: unknown = $edit.current.innerHTML as string;
       let typeStr = curentType;
+      console.log('text', text, typeof text, /^["'].*["']$/.test(text as string));
       if (/^["'].*["']$/.test(text as string)) {
         text = (text as string).replace(/^["'](.*)["']$/, '$1');
         typeStr = 'string';
-      } else if (typeof text === 'number' && !isNaN(text)) {
+      } else if (isFinite(parseFloat(text)) && !isNaN(parseFloat(text))) {
         text = Number(text);
         typeStr = isFloat(text as number) ? 'float' : 'number';
       }
@@ -168,11 +169,11 @@ export function ReValue<T extends object>(props: ReValueProps<T>) {
   return (
     <Fragment>
       {displayDataTypes && typeView}
-      <Quotes style={style} quotes={quotes} show={typeStr === 'string'} />
+      <Quotes style={style} quotes={'"'} show={typeStr === 'string'} />
       <span {...spanProps} ref={$edit} data-value={childStr}>
         {typeof curentChild === 'string' ? curentChild : childStr}
       </span>
-      <Quotes style={style} quotes={quotes} show={typeStr === 'string'} />
+      <Quotes style={style} quotes={'"'} show={typeStr === 'string'} />
       {visible && editableValue && onEdit && <EditIcon onClick={click} />}
       {visible && editableValue && onDelete && <DeleteIcon onClick={deleteHandle} />}
     </Fragment>

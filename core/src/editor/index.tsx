@@ -56,7 +56,7 @@ const JsonViewEditor = forwardRef<HTMLDivElement, JsonViewEditorProps<object>>((
   return (
     <JsonView
       {...reset}
-      enableEdit={typeof onEdit !== 'undefined'}
+      enableEdit={typeof onEdit !== 'undefined' && editable}
       displayDataTypes={false}
       components={comps}
       ref={ref}

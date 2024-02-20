@@ -93,6 +93,7 @@ export const RootNode = forwardRef(
       quotes,
       level: level + 1,
       style: { paddingLeft: indentWidth },
+      enableEdit,
     };
     const valueViewProps = {
       displayDataTypes,
