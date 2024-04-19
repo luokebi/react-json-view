@@ -218,6 +218,7 @@ export const RootNode = forwardRef(
                         namespace={[...namespace, label]}
                         keyName={label}
                         keyid={keyid + subkeyid + label}
+                        shortenTextAfterLength={shortenTextAfterLength}
                         {...(subNodeProps as any)}
                       />
                     </Line>
@@ -231,6 +232,7 @@ export const RootNode = forwardRef(
                         namespace={[...namespace, key]}
                         keyName={key}
                         keyid={keyid + subkeyid + key}
+                        shortenTextAfterLength={shortenTextAfterLength}
                         {...(subNodeProps as any)}
                       />
                     </Line>
@@ -269,6 +271,7 @@ export const RootNode = forwardRef(
                     isSet={isSet}
                     value={myValue}
                     enableEdit={enableEdit}
+                    shortenTextAfterLength={shortenTextAfterLength}
                   />
                 );
               })}

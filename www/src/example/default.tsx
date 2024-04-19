@@ -47,6 +47,19 @@ export const example = {
   // @ts-ignore
   bigint: 10086n,
   nan: NaN,
+  a: {
+    content:
+      'Explain the text delimited by triple quotes in.  Do not wrap responses in quotes.sklsd sdkllk sdflkjsd fskld flksd flk sd',
+    icon: '',
+    id: '49898',
+    isCustom: true,
+    key: 'custom_1696123555331',
+    name: 'tt',
+    parentKey: '',
+    placeholder: '',
+    shortName: '',
+    usedIn: ['chat', 'read', 'write'],
+  },
   null: null,
   undefined,
   boolean: true,
@@ -125,6 +138,7 @@ export function Example() {
         highlightUpdates={highlightUpdates}
         quotes={quotes}
         objectSortKeys={objectSortKeys}
+        shortenTextAfterLength={0}
         enableClipboard={clipboard}
         style={{ ...theme, padding: 6, borderRadius: 6 }}
         collapsed={collapsed}
